@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "site": "bootsockel",
+    "public": "public",
+    "cleanUrls": true,
+    "ignore": ["firebase.json", "**/.*"],
+    "headers": [
+      {
+        "source": "/css/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+      }
+    ]
+  }
+}
