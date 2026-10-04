@@ -3,10 +3,15 @@
     "site": "bootsockel",
     "public": "public",
     "cleanUrls": true,
+    "predeploy": ["python3 \"$PROJECT_DIR/build.py\""],
     "ignore": ["firebase.json", "**/.*"],
     "headers": [
       {
-        "source": "/css/**",
+        "source": "/@(img|video)/**",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "/@(css|js)/**",
         "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
       }
     ]
